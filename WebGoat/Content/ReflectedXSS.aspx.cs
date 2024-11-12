@@ -22,10 +22,10 @@ namespace OWASP.WebGoat.NET
 
 		void LoadCity (String city)
 		{
-            DataSet ds = du.GetOffice(city);
-            lblOutput.Text = "Here are the details for our " + city + " Office";
-            dtlView.DataSource = ds.Tables[0];
-            dtlView.DataBind();
+		    DataSet ds = du.GetOffice(city);
+		    lblOutput.Text = "Here are the details for our " + Server.HtmlEncode(city) + " Office";
+		    dtlView.DataSource = ds.Tables[0];
+		    dtlView.DataBind();
 		}
 
         void FixedLoadCity (String city)
